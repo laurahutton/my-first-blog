@@ -4,10 +4,14 @@
     </head>
     <body>
         <div>
-            <h1>Blog Posts</h1>
-            <h3>This is where my posts will be when I think of what to write about.</h3>
+            <h1><a href="/">Blog</a></h1>
         </div>
-        <p>Hello world!</p>
-        <p>Here we go :)</p>
+        {% for post in posts %}
+            <div>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaks }}</p>
+                <p>published: {{ post.published_date }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
